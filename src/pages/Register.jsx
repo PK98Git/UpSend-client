@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CTAImage from './../assets/user.jpg';
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -51,7 +52,10 @@ const Register = () => {
         <section className="text-gray-600 body-font h-[calc(100vh-80px)] flex items-center">
         <div className="container px-5 mx-auto flex flex-wrap items-center justify-center xl:w-2/5 lg:w-1/2 md:w-3/4 w-full">
           <div className="border-emerald-500 border-2 rounded-xl p-16 flex flex-col ml-auto w-full mt-10 md:mt-0">
-            <h2 className="text-gray-900 text-2xl font-medium title-font mb-5 text-center">Register User</h2>
+            <h2 className="sm:text-5xl text-3xl mb-4 font-bold max-w-[750px] text-[#24695C]">Register User</h2>
+            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+              <br/><img className="object-cover object-center rounded transform -scale-x-40" alt="hero" src={CTAImage} />
+          </div>
             {error && <p className="text-red-500 text-sm text-center">{error}</p>}
             <div className="relative mb-4">
               <label htmlFor="name" className="leading-7 text-sm text-gray-600">

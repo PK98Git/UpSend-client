@@ -32,7 +32,7 @@ const Login = () => {
         navigate('/admin/dashboard');
       }
 
-      setUser({});
+      
     } catch (err) {
       setError(err.response.data.message);
       setButtonStatus(false);

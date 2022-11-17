@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Header from './Header';
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
+import CTAImage from './../assets/msg.jpg';
+
 const ManagerMessage = () => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -20,7 +22,7 @@ const ManagerMessage = () => {
             token: token,
           },
         }
-      );   toast.success("Successfully Save Message!", {
+      );   toast.success("Message Sent Successfully!", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -44,12 +46,21 @@ const ManagerMessage = () => {
         <div class="mx-auto w-full max-w-[550px]">
           {error && <p className="text-red-500 text-sm text-center">{error}</p>}
           <form>
+          <label
+                for="message"
+                class="sm:text-5xl text-3xl mb-4 font-bold max-w-[750px] text-[#24695C]"
+              >
+                Message Center
+              </label>
+              <br/><div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+              <br/><img className="object-cover object-center rounded transform -scale-x-100" alt="hero" src={CTAImage} />
+          </div>
             <div class="mb-5">
-              <label
+            <br/><label
                 for="message"
                 class="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Message
+                Submit Your Message
               </label>
               <textarea
                 rows="4"
@@ -57,27 +68,30 @@ const ManagerMessage = () => {
                 id="message"
                 name="message"
                 value={message}
-                placeholder="Type your message"
-                class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 
-                text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                placeholder="Enter your message"
+                class="w-full resize-none rounded-md border border-[#24695C] bg-white py-3 px-6 
+                text-base font-medium text-[#24695C] outline-none focus:border-[#24695C] focus:shadow-md"
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
+            
             <div>
-              <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
-                <div class="absolute inset-0 w-3 bg-[#6A64F1] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+              <button class="hover:shadow-form w-full rounded-md bg-[#24695C] py-3 px-8 text-center text-base font-semibold text-white outline-none">
+
                 <span
-                  class="relative text-black group-hover:text-white"
+                  class="relative text-white group-hover:text-white"
                   onClick={saveMessage}
                   disabled={buttonStatus}
                 >
-                  {buttonStatus ? "Saving..." : "Save"}
+                  {buttonStatus ? "Message Sending..." : "Submit"}
                 </span>
               </button>
             </div>
+            
           </form>
         </div>
       </div>
+      
       <ToastContainer
         position="top-center"
         autoClose={5000}

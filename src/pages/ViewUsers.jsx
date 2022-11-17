@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import Header from '../components/Header';
+import VectorUsers from './../assets/user2.jpg';
 
 const ViewUsers = () => {
   const [users, setUsers] = useState([]);
@@ -29,20 +30,20 @@ const ViewUsers = () => {
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-10 mx-auto">
           <div class="flex flex-col text-center w-full mb-10">
-            <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Registered Users</h1>
+            <h1 class="sm:text-5xl text-3xl mb-4 font-bold max-w-[750px] text-[#24695C]">All Workers</h1>
           </div>
           <div class="lg:w-2/3 w-full mx-auto overflow-auto">
             <table class="table-auto w-full text-left whitespace-no-wrap">
               <thead>
                 <tr>
-                  <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">
-                    Name
+                  <th class="px-4 py-3 title-font tracking-wider font-medium text-[#24695C] text-sm bg-gray-100 rounded-tl rounded-bl">
+                    Worker Name
                   </th>
-                  <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                    Username
+                  <th class="px-4 py-3 title-font tracking-wider font-medium text-[#24695C] text-sm bg-gray-100">
+                    Worker Username
                   </th>
-                  <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                    Role
+                  <th class="px-4 py-3 title-font tracking-wider font-medium text-[#24695C] text-sm bg-gray-100">
+                    Worker Role
                   </th>
                   <th class="w-10 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
                 </tr>
@@ -77,6 +78,9 @@ const ViewUsers = () => {
             </table>
           </div>
         </div>
+        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><img className="object-cover object-center rounded transform -scale-x-100" alt="hero" src={VectorUsers} />
+          </div>
       </section>
     </div>
   );
